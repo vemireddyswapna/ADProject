@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Cervical Cell AI{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <a class="brand" href="{{ url_for('home') }}">
+        <span class="brand-icon">✚</span>
+        <span>Cervical Cell AI</span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('model_info') }}">AI Model</a>
+        <a href="{{ url_for('home') }}#predict">Prediction</a>
+        <a href="{{ url_for('history') }}">History</a>
+    </nav>
+</header>
+
+<main class="page-container">
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+    <p>Cervical Cell AI Classification System</p>
+    <p>Academic project · For research and educational use only</p>
+</footer>
+
+</body>
+</html>
