@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction History</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Prediction History</h1>
+
+    {% if records %}
+
+    <table border="1" cellpadding="10" cellspacing="0">
+
+        <tr>
+            <th>ID</th>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Hospital ID</th>
+            <th>Doctor</th>
+            <th>Prediction</th>
+            <th>Confidence</th>
+            <th>Risk</th>
+            <th>Date & Time</th>
+        </tr>
+
+        {% for record in records %}
+
+        <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ record[1] }}</td>
+            <td>{{ record[2] }}</td>
+            <td>{{ record[3] }}</td>
+            <td>{{ record[4] }}</td>
+            <td>{{ record[5] }}</td>
+            <td>{{ "%.2f"|format(record[6]) }}%</td>
+            <td>{{ record[7] }}</td>
+            <td>{{ record[8] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+
+        <h2>No Prediction History Found</h2>
+
+        <p>
+            Make a prediction first. Your prediction will appear here.
+        </p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/">← New Prediction</a>
+
+</div>
+
+</body>
+</html>
