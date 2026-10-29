@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}AI Model | Cervical Cell AI{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+    <p class="eyebrow">OUR TECHNOLOGY</p>
+    <h1>AI Model & Methodology</h1>
+    <p>Understanding how our cervical cell classification system works.</p>
+</section>
+
+<section class="card section">
+    <h2>EfficientNetB0</h2>
+    <p>
+        Our project uses EfficientNetB0 with transfer learning.
+        The pretrained network extracts image features, and a
+        classification head predicts one of five cell categories.
+    </p>
+
+    <div class="architecture">
+        <div>Input Image</div>
+        <span>↓</span>
+        <div>Resize to 224 × 224</div>
+        <span>↓</span>
+        <div>EfficientNetB0</div>
+        <span>↓</span>
+        <div>Classification into 5 Classes</div>
+        <span>↓</span>
+        <div>Prediction + Confidence</div>
+    </div>
+</section>
+
+<section class="card section">
+    <h2>Cell Categories</h2>
+
+    <div class="class-grid">
+        <div class="class-item">01 <span>Dyskeratotic</span></div>
+        <div class="class-item">02 <span>Koilocytotic</span></div>
+        <div class="class-item">03 <span>Metaplastic</span></div>
+        <div class="class-item">04 <span>Parabasal</span></div>
+        <div class="class-item">05 <span>Superficial-Intermediate</span></div>
+    </div>
+</section>
+
+<section class="card section">
+    <h2>Performance</h2>
+    <p>Previously measured held-out test accuracy: <strong>85.52%</strong></p>
+    <p>
+        This result applies to the evaluated test split and does not
+        guarantee the accuracy of an individual prediction.
+    </p>
+</section>
+
+<div class="notice">
+    The risk indicator is based on predefined project rules and
+    has not been clinically validated.
+</div>
+{% endblock %}
