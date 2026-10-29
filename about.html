@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}About | Cervical Cell AI{% endblock %}
+
+{% block content %}
+<section class="page-heading">
+    <p class="eyebrow">ABOUT THE PROJECT</p>
+    <h1>Making Cell Classification Smarter with AI</h1>
+    <p>
+        An academic project exploring deep learning for cervical
+        cell image classification using transfer learning.
+    </p>
+</section>
+
+<section class="card section">
+    <h2>Project Overview</h2>
+    <p>
+        Cervical Cell AI uses an EfficientNetB0 deep-learning model
+        to classify cervical cell images into five cytological
+        categories. The application provides predictions, confidence
+        scores, saved prediction history, and PDF reports.
+    </p>
+</section>
+
+<section class="card-grid section">
+    <article class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Objective</h3>
+        <p>Explore automated classification of cervical cell images.</p>
+    </article>
+
+    <article class="card">
+        <div class="card-icon">🧠</div>
+        <h3>Deep Learning</h3>
+        <p>Apply EfficientNetB0 transfer learning to image classification.</p>
+    </article>
+
+    <article class="card">
+        <div class="card-icon">📄</div>
+        <h3>Reports</h3>
+        <p>Store prediction records and generate downloadable reports.</p>
+    </article>
+</section>
+
+<section class="card section">
+    <h2>Developed By</h2>
+    <p><strong>Vemireddy Swapna</strong></p>
+    <p>Department of Computer Science and Engineering</p>
+    <p>Malla Reddy University</p>
+</section>
+
+<div class="notice">
+    This is an academic prototype. Its predictions and project-defined
+    risk indicators are not a clinical diagnosis.
+</div>
+{% endblock %}
