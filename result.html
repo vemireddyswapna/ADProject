@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Prediction Result</h1>
+
+    <div class="card">
+
+        <h2>Patient Details</h2>
+
+        <p><b>Patient Name:</b> {{ patient_name }}</p>
+        <p><b>Age:</b> {{ age }}</p>
+        <p><b>Hospital ID:</b> {{ hospital_id }}</p>
+        <p><b>Doctor:</b> {{ doctor_name }}</p>
+
+        <hr>
+
+        <h2>AI Analysis</h2>
+
+        <div class="result-box">
+
+            <p>
+                <b>Predicted Cell Type:</b>
+                {{ prediction }}
+            </p>
+
+            <p>
+                <b>Confidence:</b>
+                {{ "%.2f"|format(confidence) }}%
+            </p>
+
+            <p>
+                <b>Project Risk Indicator:</b>
+                {{ risk }}
+            </p>
+
+        </div>
+
+        <a class="button" href="/download/{{ report_filename }}">
+            Download PDF Report
+        </a>
+
+        <a class="history-link" href="/">
+            Analyze Another Image
+        </a>
+
+        <a class="history-link" href="/history">
+            View History
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
